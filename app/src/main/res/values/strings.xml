@@ -19,7 +19,8 @@
     <string name="return_btn">Input Room Dimensions</string>
 
     <string name="interior_surface_area">Interior surface area: </string>
-    <string name="gallons_needed_message">Gallons needed:</string>
+
+    <string name="estimated_gallons_needed_message">Estimated Paint Required: </string>
 
     <!-- HELP TEXT -->
     <string name="help_text">

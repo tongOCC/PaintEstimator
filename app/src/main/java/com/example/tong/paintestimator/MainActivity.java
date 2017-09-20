@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeViews()
     {
-        mlengthEditText= (EditText) findViewById(R.id.LengthTextView);
-        mWidthEditText= (EditText) findViewById(R.id.WidthTextView);
-        mHeightEditText=(EditText) findViewById(R.id.LengthTextView);
-        mDoorEditText=(EditText) findViewById(R.id.DoorsTextView);
-        mWindowEditText=(EditText) findViewById(R.id.WindowsTextView);
-        mGallonsTextView=(EditText) findViewById(R.id.gallonsTextView);
+        mlengthEditText= (EditText) findViewById(R.id.LengthEditText);
+        mWidthEditText= (EditText) findViewById(R.id.WidthEditText);
+        mHeightEditText=(EditText) findViewById(R.id.HeightEdiText);
+        mDoorEditText=(EditText) findViewById(R.id.DoorEditText);
+        mWindowEditText=(EditText) findViewById(R.id.WindowEditText);
+        mGallonsTextView=(TextView) findViewById(R.id.gallonsTextView);
     }
     private void loadPrefs()
     {
@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
                   mWidthEditText.setText(String.valueOf(mRoom.getWidth()));
 
                   mRoom.setLength(mPref.getFloat("length",0.0f));
-                  mlengthEditText.setText(mRoom.getDoors());
+                  mlengthEditText.setText(String.valueOf(mRoom.getLength()));
 
                   mRoom.setWindows(mPref.getInt("windows",0));
-                  mWindowEditText.setText(mRoom.getWindows());
+                  mWindowEditText.setText(String.valueOf(mRoom.getWindows()));
 
 
                   //mEditText.setText(mRoom.getDoors());
