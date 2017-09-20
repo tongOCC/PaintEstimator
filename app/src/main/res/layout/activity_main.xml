@@ -1,18 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paintbackground"
     tools:context="com.example.tong.paintestimator.MainActivity">
 
     <TextView
+        android:id="@+id/PaintCalculatorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/enter_dimensions"
+        android:layout_marginTop="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/LengthEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="134dp"
+        android:layout_marginRight="134dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="58dp"
+        android:layout_alignTop="@+id/PaintCalculatorTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/WidthEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/LengthEditText"
+        android:layout_alignStart="@+id/LengthEditText"
+        android:layout_below="@+id/LengthEditText"
+        android:layout_marginTop="51dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/HeightEdiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/WidthEditText"
+        android:layout_alignStart="@+id/WidthEditText"
+        android:layout_below="@+id/WidthEditText"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/DoorEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/HeightEdiText"
+        android:layout_alignRight="@+id/HeightEdiText"
+        android:layout_below="@+id/HeightEdiText"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="146dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/WindowEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/DoorEditText"
+        android:layout_alignLeft="@+id/DoorEditText"
+        android:layout_alignStart="@+id/DoorEditText" />
+
+    <Button
+        android:id="@+id/ComputeGallonsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="@string/compute_button_text"
+        android:onClick="computeGallons"
+        android:layout_below="@+id/WindowEditText"
+        android:layout_toLeftOf="@+id/WindowEditText"
+        android:layout_toStartOf="@+id/WindowEditText" />
+
+    <Button
+        android:id="@+id/HelpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToHelp"
+        android:layout_alignTop="@+id/ComputeGallonsButton"
+        android:layout_toEndOf="@+id/ComputeGallonsButton"
+        android:layout_toRightOf="@+id/ComputeGallonsButton"
+        android:text="@string/help_button_text" />
+
+    <TextView
+        android:id="@+id/LengthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/WidthEditText"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_toLeftOf="@+id/ComputeGallonsButton"
+        android:layout_toStartOf="@+id/ComputeGallonsButton"
+        android:text="@string/length" />
+
+    <TextView
+        android:id="@+id/WidthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/HeightEdiText"
+        android:layout_alignLeft="@+id/LengthTextView"
+        android:layout_alignStart="@+id/LengthTextView"
+        android:text="@string/width" />
+
+    <TextView
+        android:id="@+id/HeightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DoorEditText"
+        android:layout_alignLeft="@+id/WidthTextView"
+        android:layout_alignStart="@+id/WidthTextView"
+        android:text="@string/height" />
+
+    <TextView
+        android:id="@+id/HowManyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:text="@string/enter_door_window"
+        android:layout_below="@+id/HeightEdiText"
+        android:layout_alignLeft="@+id/ComputeGallonsButton"
+        android:layout_alignStart="@+id/ComputeGallonsButton" />
+
+    <TextView
+        android:id="@+id/DoorsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/WindowEditText"
+        android:layout_alignEnd="@+id/HeightTextView"
+        android:layout_alignRight="@+id/HeightTextView"
+        android:text="@string/doors" />
+
+    <TextView
+        android:id="@+id/WindowsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ComputeGallonsButton"
+        android:layout_alignLeft="@+id/DoorsTextView"
+        android:layout_alignStart="@+id/DoorsTextView"
+        android:text="@string/windows" />
+
+    <TextView
+        android:id="@+id/gallonsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp"
+        android:text="TextView" />
+
+</android.widget.RelativeLayout>
